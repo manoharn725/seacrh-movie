@@ -13,7 +13,7 @@ const searchMovies = async (term) => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data.d);
+    // console.log(response.data.d);
     return response.data.d;
   } catch (error) {
     console.error(error);

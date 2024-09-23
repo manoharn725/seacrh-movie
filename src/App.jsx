@@ -9,7 +9,7 @@ function App() {
   
   const handleSubmit = async (term) => {
     const result = await searchMovies(term);
-    console.log(result)
+    // console.log(result);
     setMovies(result || []);
   };
 
