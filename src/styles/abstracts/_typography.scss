@@ -1,0 +1,9 @@
+:root{
+    --font-family: sans-serif;
+    --deafult-font-size: 1.6rem;
+    --default-font-weight: 400;
+    p{
+        font-size: var(--deafult-font-size);
+        font-weight: var(--default-font-weight);
+    }
+}
