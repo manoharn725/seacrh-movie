@@ -1,0 +1,29 @@
+@import "../../styles/main.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  padding: 10px 10px 5px;
+  background-color: var(--card-color);
+  box-shadow: -2px 3px 7px var(--shadow-color);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  & > p {
+    overflow-x: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 0;
+    text-align: center;
+  }
+}
