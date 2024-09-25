@@ -14,7 +14,7 @@ const SearchBar = ({ onFormSubmit }) => {
   };
   return (
     <form onSubmit={handleFormSubmit}>
-      <input type="text" value={term} onChange={handleOnChange} />
+      <input type="text" value={term} onChange={handleOnChange} placeholder="Search Movies...." />
       <button type="submit">Submit</button>
     </form>
   );
