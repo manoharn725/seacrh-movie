@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import MoviesList from "./components/MoviesList";
 import "./App.scss";
 
-function App() {
+const App = () => {
   const [movies, setMovies] = useState([]);
   
   const handleSubmit = async (term) => {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Search English Movies</h1>
+      <h1>Search Movies</h1>
       <SearchBar onFormSubmit={handleSubmit} />
       <MoviesList 
       moviesList={movies} 
