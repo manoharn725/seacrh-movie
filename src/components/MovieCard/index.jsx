@@ -1,10 +1,10 @@
 import noPosterAvailabel from '../../assets/no-poster-available.png'
 import "./index.scss";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, isLoading }) => {
   return (
     <div className="card">
-        <img src={movie?.i?.imageUrl || noPosterAvailabel} alt="no poster available" />
+        {isLoading?'loading' :<img src={movie?.i?.imageUrl || noPosterAvailabel} alt="no poster available" />}
       <p>{movie?.l}</p>
     </div>
   );

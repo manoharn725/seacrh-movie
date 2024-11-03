@@ -1,14 +1,18 @@
 import { useState } from "react";
-import searchMovies from "./api";
 import SearchBar from "./components/SearchBar";
 import MoviesList from "./components/MoviesList";
+import { useGetDataQuery } from "./store/api/moviesApi";
 import "./App.scss";
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
-  
+  const [searchTerm, setSearchTerm] = useState('mad max');
+
+
+  const { data, isError, isLoading } = useGetDataQuery(searchTerm);
+  console.log(data?.d);
+
   const handleSubmit = async (term) => {
-    const result = await searchMovies(term);
+    const result = await setSearchTerm(term);
     // console.log(result);
     setMovies(result || []);
   };
@@ -17,11 +21,9 @@ const App = () => {
     <div className="container">
       <h1>Search Movies</h1>
       <SearchBar onFormSubmit={handleSubmit} />
-      <MoviesList 
-      moviesList={movies} 
-      />
+      <MoviesList moviesList={data?.d} isLoading={isLoading} isError={isError} />
     </div>
   );
-}
+};
 
 export default App;
