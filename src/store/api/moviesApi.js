@@ -16,7 +16,7 @@ export const moviesApi = createApi({
   tagTypes: ["getData"],
   endpoints: (builder) => ({
     getData: builder.query({
-      query: (q) => `?q=${q}`,
+      query: (searchTerm) => `?q=${searchTerm}`,
       method: "GET",
     }),
   }),
