@@ -14,7 +14,6 @@ const App = () => {
   const handleSubmit = async (term) => {
     const result = await setSearchTerm(term);
     // console.log(result);
-    setMovies(result || []);
   };
 
   return (
